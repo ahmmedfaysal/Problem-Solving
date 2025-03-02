@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+const ll p= 1e9+7;
+
+
+void solve(){
+    string keb;
+    cin>>keb;
+    string s;
+    cin>>s;
+    int res=0;
+    int arr[26];
+    for(int i=0; i<26; i++){
+        int x= keb[i];
+        arr[x]=i;
+    }
+
+    for(int i=1; i<s.size();i++){
+        res+=(abs(arr[s[i]]-arr[s[i-1]]));
+    }
+    cout<<res<<endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+    
+    return 0;
+}
